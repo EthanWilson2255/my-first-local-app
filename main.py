@@ -48,8 +48,24 @@ class BudgetApp:
 
             self.root2.title(f"{self.name_entry.get()}'s Budget!")
 
-            self.budgetlabel = tk.Label(self.root2, text=f"{self.name_entry.get()}", font=('Arial', 18))
+            self.budgetlabel = tk.Label(self.root2, text=f"Choose Your Goal!", font=('Arial', 18))
             self.budgetlabel.pack(padx=10, pady=10)
+
+            self.buttonframe = tk.Frame(self.root2)
+            self.buttonframe.columnconfigure(0, weight=1)
+            self.buttonframe.columnconfigure(1, weight=1)
+            self.buttonframe.columnconfigure(2, weight=1)
+
+            self.btn1 = tk.Button(self.buttonframe, text="Get out of debt", font=('Arial', 18))
+            self.btn1.grid(row=0, column=0, sticky=tk.W+tk.E)
+
+            self.btn2 = tk.Button(self.buttonframe, text="Save for retirement", font=('Arial', 18))
+            self.btn2.grid(row=0, column=1, sticky=tk.W+tk.E)
+
+            self.btn3 = tk.Button(self.buttonframe, text="Save for a purchase", font=('Arial', 18))
+            self.btn3.grid(row=0, column=2, sticky=tk.W+tk.E)
+
+            self.buttonframe.pack(fill='x')
 
             self.root2.mainloop()
 
